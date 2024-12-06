@@ -3,14 +3,11 @@ package com.example.employee.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
+import lombok.AllArgsConstructor;;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-
 import java.time.LocalDate;
-import java.util.Date;
+
 
 @Data
 @AllArgsConstructor(staticName = "build")
@@ -20,7 +17,6 @@ import java.util.Date;
 public class Employee {
     @Id
     //@GeneratedValue
-    //Do not create property like first_name , prefer firstName
     private long emp_no;
     @Column(name = "first_name")
     private String firstName;
