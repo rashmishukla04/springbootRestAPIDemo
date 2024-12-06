@@ -10,7 +10,6 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -64,8 +63,7 @@ public class EmployeeService {
 
 
     public Page<Employee> getEmployeeWithPagination(int offset , int pageSize){
-        Page<Employee> employees = employeeRepository.findAll(PageRequest.of(offset, pageSize));
-        return employees;
+        return employeeRepository.findAll(PageRequest.of(offset, pageSize));
     }
 
 

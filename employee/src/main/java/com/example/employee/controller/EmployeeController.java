@@ -21,17 +21,16 @@ import java.util.List;
 @RequestMapping("/v1")
 public class EmployeeController {
     private static final Logger logger = LoggerFactory.getLogger(EmployeeController.class);
+    private EmployeeService employeeService;
+
     @Autowired
-    EmployeeService employeeService;
+    public EmployeeController(final EmployeeService employeeService) {
+        this.employeeService = employeeService;
+    }
 
     @GetMapping("/hello")
     public String hello(){
         return "hello";
-    }
-
-    @GetMapping("/all")
-    public ResponseEntity<Employee> getAllEmployeeDetails(){
-        return null;//Employee.builder().emp_no(1000L).firstName("Asss").last_name("las").build();
     }
 
     @PostMapping("/addEmployee")
